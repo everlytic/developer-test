@@ -8,7 +8,9 @@ to complete
 
 ### Requirements
 PHP 7.0 or higher
+
 MySQL Database
+
 Composer
 
 ### Setup
