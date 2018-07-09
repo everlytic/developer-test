@@ -20,7 +20,8 @@ Note: The laravel documentation for this setup can be found here: https://larave
 
 ### Brief
 Complete the user listing interface as per the design without using a responsive framework like bootstrap. 
-For example, the modal can just be implemented using a absolute positioned container
+For example, the modal can just be implemented using a absolute positioned container. The design files is inside the task1/UserRegistryDesign folder
+
 1. The following features must be completed:
   
     a. List all users currently stored in the database
