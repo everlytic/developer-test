@@ -14,13 +14,27 @@ MySQL Database
 Composer
 
 ### Setup
+1. Setup the .env file with the database credentials and ensure this file is identical to .env.example
+2. Create the table to store the user listing and include this structure with seed data in the laravel migration folder 
 
 ### Brief
-1. Complete the user listing interface as per the design (folder location)
-2. The following features must be completed:
-  a. List all users currently stored in the database
-  b. Ability to add new users
-  c. Ability to delete existing users
+Complete the user listing interface as per the design without using a responsive framework like bootstrap. 
+For example, the modal can just be implemented using a absolute positioned container
+1. The following features must be completed:
+  
+    a. List all users currently stored in the database
+ 
+    b. Ability to add new users
+  
+    c. Ability to delete existing users
+    
+2. Create the routes for each of the above features
+3. Implement a respository design pattern with models when interfacing with the database
+4. As an optional extra (not required), ensure the code in the controllers and repositories are tested using phpunit.
+
+## Task 2
+Complete the questionaire word document in the task 2 folder
+
   
   
   
