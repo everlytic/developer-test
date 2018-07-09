@@ -1,8 +1,7 @@
 # Everlytic Developer Test
 ## Overview
 Welcome to the Everlytic developer test. This test contains 2 required tasks. The first task contains the laravel 5.5 framework 
-where you are required to implement a simple user listing as described below. The second task is more of an assessment that you need 
-to complete
+where you are required to implement a simple user listing as described below. The second task is more of an assessment that you need to complete
 
 ## Task 1
 
@@ -16,6 +15,8 @@ Composer
 ### Setup
 1. Setup the .env file with the database credentials and ensure this file is identical to .env.example
 2. Create the table to store the user listing and include this structure with seed data in the laravel migration folder 
+
+Note: The laravel documentation for this setup can be found here: https://laravel.com/docs/5.5/configuration
 
 ### Brief
 Complete the user listing interface as per the design without using a responsive framework like bootstrap. 
