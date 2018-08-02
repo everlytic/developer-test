@@ -32,7 +32,7 @@ For example, the modal can just be implemented using a absolute positioned conta
     
 2. Create the routes for each of the above features
 3. Implement a respository design pattern with models when interfacing with the database
-4. As an optional extra (not required), ensure the code in the controllers and repositories are tested using phpunit.
+4. Ensure the code in the controllers and repositories are tested using phpunit.
 
 ## Task 2
 Complete the questionaire word document in the task 2 folder
