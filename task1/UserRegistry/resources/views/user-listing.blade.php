@@ -1,22 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Listing</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
 <div class="header-image">
     <h1>User Listing</h1>
 </div>
 <div class="main">
     <div class="user-list">
-        <p>Please make sure you read my notes on why I did things, located in the root directory as notes.txt</p>
+        <p>Please make sure you read my notes on why I did things, located in the root directory as notes.md or <a
+                    href="/notes.html" target=_blank>
+                click here</a></p>
         <button id="open_form">Add New User</button>
         <table>
             @foreach($users as $user)
@@ -67,6 +58,4 @@
         </form>
     </div>
 </div>
-<script src="{{asset('js/main.js')}}"></script>
-</body>
-</html>
+@endsection

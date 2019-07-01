@@ -26,7 +26,7 @@ class UserListingController extends Controller
     {
         $users = $this->userListingRepo->listAllUserListings();
 
-        return view('welcome', compact('users'));
+        return view('user-listing', compact('users'));
     }
 
     /**
