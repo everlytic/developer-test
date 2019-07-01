@@ -36,9 +36,3 @@ For example, the modal can just be implemented using a absolute positioned conta
 
 ## Task 2
 Complete the questionaire word document in the task 2 folder
-
-  
-  
-  
-
-

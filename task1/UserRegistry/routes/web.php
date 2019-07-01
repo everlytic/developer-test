@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/users');}
+    );
+Route::get('users', 'UserListingController@index');
+Route::post('users', 'UserListingController@store');
+Route::delete('users', 'UserListingController@destroy');
+Route::get('run', function () {
+
 });

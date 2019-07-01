@@ -1,0 +1,19 @@
+#David's Notes
+##General notes
+I made a new model instead of using Laravel's built in User object because the kind of user that we are creating isn't really in that style, (for example they don't have a password or a log in middleware etc), and I called that model UserListing.
+All this tinkering is probably causing me to lose points now that I think about it, but yolo.
+
+##Repositories
+In this example because its such a small test set up the whole repository structure is way overkill and just makes the code more complicated to read than anything else. I inherited a project at a previous job where the dev went just absolutely wild with repos for every little thing and it make debugging and fixing the code really irritating. So I might have a bit of a PTSD bias for repos. Nevertheless I followed one style of repositories that I find the least annoying. Obviously when a project is big enough repositories is the way to go, otherwise you would have code duplicated all over the place.
+
+##Javascript
+You might notice my javascipt if you take a look into the file is quite messy, I did this because I just wanted to have the working structure of the assignment working as per spec, but I don't think you will be focusing on the javascript side of things. If I were to have a need to neaten up the javascript I definitely could, and would if you would like me to (just to prove that I am indeed capable of writing clean javascript)
+
+##Using google fonts and font awesome
+I assume this use of mine was okay as the instructions only said to not use bootstrap, so I get the sense that you aren't really looking for too much front end analysis. 
+I simply used google fonts because I like open sans and I used font awesome because it was the easiest way to use the trashcan icon. However if needed I could adjust that to not make any use of any external libraries, bring my own font, or use a system one, and get my own icon for the trashcan image.
+Also even if using libraries is fine, I would ideally do a pull of those files locally so that we wouldn't have to rely on a cdn that adds an extra request to the site, and could go down outside of our control.
+
+ ##Testing
+ Regarding the testing task with phpunit, with laravel I usually use Laravel Dusk and do browser tests to ensure that the code works, which uses phpunit as the underlying system as well as selenium for the browser part, but I can also write more basic database tests like these: https://laravel.com/docs/5.5/database-testing
+ However it isn't specified which kind of test should be done in this case. I didn't want to waste either of our time in writing the wrong kind of tests, so if you want just clarify with me what kind of tests you mean and I will get those done ASAP.
