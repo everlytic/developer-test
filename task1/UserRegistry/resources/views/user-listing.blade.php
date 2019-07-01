@@ -33,13 +33,13 @@
         <form action="/users" method="POST">
             {{ csrf_field() }}
             <label for="first_name">Name</label>
-            <input type="text" id="first_name" name="first_name" value="Bob">
+            <input type="text" id="first_name" name="first_name" placeholder="Enter your name" required>
             <label for="last_name">Surname</label>
-            <input type="text" id="last_name" name="last_name" value="Smith"><br>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter your surname" required>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" value="bob@example.com"><br>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
             <label for="position">Position</label>
-            <input type="text" id="position" name="position" value="CEO"><br>
+            <input type="text" id="position" name="position" placeholder="Enter your current position" required>
             <button class="close" type="button">Cancel</button>
             <button>Submit</button>
         </form>
