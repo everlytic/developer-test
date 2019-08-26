@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect('/users/');}
+);
+
+Route::get('/users', 'CustomUserController@index');
+Route::post('/users', 'CustomUserController@save');
+Route::delete('/users/{user}', 'CustomUserController@delete');
