@@ -1,4 +1,10 @@
+# Everlytic Assessment Done
+
+## Video of Assessment
+I created a screencast of the steps I followed to do the assessment, see it here: https://drive.google.com/file/d/11Du30owxBx-jtValMdvE6XZawYLSd_af/view
+
 # Everlytic Developer Test
+
 ## Overview
 Welcome to the Everlytic developer test. This test contains 2 required tasks. The first task contains the laravel 5.5 framework 
 where you are required to implement a simple user listing as described below. The second task is more of an assessment that you need to complete
