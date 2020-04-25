@@ -29,7 +29,7 @@ class UserListing extends Controller
 
     public function index()
     {
-        $users = $this->user->all()->sortByDesc('id');
+        $users = $this->user->all();
 
         return view('users.index', compact('users'));
     }
@@ -54,7 +54,5 @@ class UserListing extends Controller
     public function destroy(User $user)
     {
         return $this->user->destroy($user->id);
-
-        // return response()->json(null, 204);
     }
 }

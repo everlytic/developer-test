@@ -2,13 +2,21 @@
 
 @section('title', 'Page Title')
 
-@section('heading', 'Page HEading')
+@section('heading', 'User Listing')
 
 @section('content')
-    <p>This is my body content.</p>
-    <add-user-button></add-user-button>
+    <add-user-button class="form-group"></add-user-button>
 
-    @foreach ($users as $user)
-        {{ $user->name }}
-    @endforeach
+    {{-- <table>
+        <tbody>
+            @foreach ($users as $user)
+            <tr>
+                <td>{{ $user->name . ' ' . $user->surname}}</td>
+                <td>{{ $user->position }}</td>
+                <td><delete-user-button :user_id="{{ $user->id }}"></delete-user-button></td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table> --}}
+    <list-users-table :users="{{ $users }}"></list-users-table>
 @endsection

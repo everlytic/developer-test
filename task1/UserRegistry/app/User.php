@@ -20,4 +20,21 @@ class User extends Authenticatable
         'email',
         'position',
     ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['full_name'];
+
+    /**
+     * Get the user's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return $this->attributes['fullName'] = "{$this->name} {$this->surname}";
+    }
 }

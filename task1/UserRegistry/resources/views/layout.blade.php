@@ -8,8 +8,8 @@
 
         <title>App Name - @yield('title')</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">        
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">   
     </head>
     <body>
         <div class="hero-image">
@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div id="app" class="site-content">
+        <div id="app" class="container">
             <div>
                 @yield('content')
             </div>

@@ -14,7 +14,7 @@ class USerRepository implements UserRepositoryInterface
      */
     public function all()
     {
-        return User::all();
+        return User::orderby('created_at', 'desc')->get();
     }
 
     /**

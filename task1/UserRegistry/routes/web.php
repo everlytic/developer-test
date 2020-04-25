@@ -13,3 +13,4 @@
 
 Route::get('/', 'UserListing@index');
 Route::post('/users', 'UserListing@store');
+Route::delete('/users/{user}', 'UserListing@destroy');

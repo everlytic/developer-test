@@ -1,47 +1,90 @@
 <template>
     <div>
-        <button>Add new user</button>
-        <div>
-            <form @submit.prevent="submit">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" v-model="user.name" />
-                    <div v-if="errors && errors.name" class="text-danger">{{ errors.name[0] }}</div>
-                </div>
+        <div class="text-align-right">
+            <button class="btn-black btn text-white" @click="openModal">Add new user</button>
+        </div>
 
-                <div class="form-group">
-                    <label for="surname">Surname</label>
-                    <input type="text" class="form-control" name="surname" id="surname" v-model="user.surname" />
-                    <div v-if="errors && errors.surname" class="text-danger">{{ errors.surname[0] }}</div>
-                </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal" v-if="showModal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h2>Add new user</h2>
                 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" v-model="user.email" />
-                    <div v-if="errors && errors.email" class="text-danger">{{ errors.email[0] }}</div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="position">Position</label>
-                    <input type="position" class="form-control" name="position" id="position" v-model="user.position" />
-                    <div v-if="errors && errors.position" class="text-danger">{{ errors.position[0] }}</div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Loader</button>
-                <button type="submit" class="btn btn-primary">Cancel</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </form>
+                <form @submit.prevent="submit">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            class="form-control"
+                            :class="errors && errors.name ? 'input-error' : ''"
+                            name="name"
+                            id="name" 
+                            v-model="user.name"
+                        />
+                        <div v-if="errors && errors.name" class="form-error text-error">{{ errors.name[0] }}</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your surname"
+                            class="form-control"
+                            :class="errors && errors.surname ? 'input-error' : ''"
+                            name="surname"
+                            id="surname"
+                            v-model="user.surname"
+                        />
+                        <div v-if="errors && errors.surname" class="form-error text-error">{{ errors.surname[0] }}</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            class="form-control"
+                            :class="errors && errors.email ? 'input-error' : ''"
+                            name="email"
+                            id="email"
+                            v-model="user.email"
+                        />
+                        <div v-if="errors && errors.email" class="form-error text-error">{{ errors.email[0] }}</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input
+                            type="position"
+                            placeholder="Enter your position"
+                            class="form-control"
+                            :class="errors && errors.position ? 'input-error' : ''"
+                            name="position"
+                            id="position"
+                            v-model="user.position"
+                        />
+                        <div v-if="errors && errors.position" class="form-error text-error">{{ errors.position[0] }}</div>
+                    </div>
+                    
+                    <div class="text-align-right">
+                        <button v-if="busy" type="submit" class="btn-black btn text-white">
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i>
+                        </button>
+                        <button type="submit" class="btn-white btn" @click="closeModal">Cancel</button>
+                        <button type="submit" class="btn-black btn text-white">Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        },
         data() {
             return {
+                showModal: false,
                 user: {
                     'name': null,
                     'surname': null,
@@ -49,15 +92,34 @@
                     'position': null,
                 },
                 errors: null,
+                busy: false,
             }
         },
         methods: {
+            openModal() {
+                this.showModal = true
+            },
+            closeModal() {
+                this.showModal = false
+                this.errors = null
+                this.clearInputs()
+            },
+            clearInputs() {
+                this.user.name = null
+                this.user.surname = null
+                this.user.email = null
+                this.user.position = null
+            },
             submit() {
                 this.errors = null
+                this.busy = true
 
                 axios.post('/users', this.user).then(response => {
-                    alert('Message sent!');
+                    this.showModal = false
+                    this.clearInputs()
+                    window.location.reload()
                 }).catch(error => {
+                    this.busy = false
                     if (error.response.status === 422) {
                         this.errors = error.response.data.errors || {};
                     }
