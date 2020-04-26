@@ -1,0 +1,23 @@
+button {
+    cursor: pointer;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    border: none;
+}
+
+.btn-white {
+    background: #fff;
+}
+
+.btn-black {
+    background-color: #000;
+}
+
+.btn-delete {
+    padding: 0;
+    background: none;
+    font-size: 25px;
+}

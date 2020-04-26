@@ -6,10 +6,13 @@ interface UserRepositoryInterface
 {
     /**
      * Get all users
-     *
-     * @return mixed
      */
     public function all();
+
+    /**
+     * Simple pagianted list of all users list of all users
+     */
+    public function paginate(int $perPage = 15);
 
     /**
      * Create a new user

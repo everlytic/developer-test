@@ -15,7 +15,6 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('list-users-table', require('./components/ListUsersTable.vue'));
 Vue.component('add-user-button', require('./components/AddUserButton.vue'));
 Vue.component('delete-user-button', require('./components/DeleteUserButton.vue'));
 

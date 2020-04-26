@@ -27,13 +27,25 @@ class UserListing extends Controller
         $this->user = $user;
     }
 
+    /**
+     * Gets sorted list of all users in the database
+     *
+     * @return Illuminate\View\View
+     */
     public function index()
     {
-        $users = $this->user->all();
-
+        $users = $this->user->paginate(10);
+        
         return view('users.index', compact('users'));
     }
 
+    /**
+     * Store newly created user in the database
+     *
+     * @param App\Http\Requests\Users\Store $request Incomming request
+     *
+     * @return App\User
+     */
     public function store(Store $request)
     {
         // Get our validated data from the request

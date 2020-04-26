@@ -1,0 +1,32 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    display: block;
+    width: 97%;
+    height: 20px;
+    padding: 6px 0 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: $dark-grey;
+    background-color: #fff;
+    border: 1px solid $grey;
+    border-radius: $border-radius;
+}
+
+.input-error {
+    border-color: $error !important;
+}
+
+.form-error {
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
