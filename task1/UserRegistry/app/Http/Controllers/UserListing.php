@@ -34,9 +34,32 @@ class UserListing extends Controller
      */
     public function index()
     {
-        $users = $this->user->paginate(10);
+        for ($i = 1; $i <= 100; $i++) {
+            $multipleOfThree = (($i % 3) === 0);
+            $multipleOfFive = (($i % 5) === 0);
+
+            if (!$multipleOfThree && !$multipleOfFive) {
+                print $i . "<br/>";
+
+                // No need to evaluate further
+                continue;
+            }
+
+            if ($multipleOfThree) {
+                print('Fizz');
+            }
+
+            if ($multipleOfFive) {
+                print('Buzz');
+            }
+
+            print("<br/>");
+        }
+
+
+        // $users = $this->user->paginate(10);
         
-        return view('users.index', compact('users'));
+        // return view('users.index', compact('users'));
     }
 
     /**
