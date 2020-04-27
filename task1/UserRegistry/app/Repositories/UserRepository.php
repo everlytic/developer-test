@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 use App\User;
 
-class USerRepository implements UserRepositoryInterface
+class UserRepository implements UserRepositoryInterface
 {
     /**
      * Get all users - Sorted by created_at desc
