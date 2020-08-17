@@ -13,9 +13,21 @@
         "axios": "^0.18.1",
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
-        "jquery": "^3.2",
-        "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "jquery": "^3.5.1",
+        "laravel-mix": "^1.7.2",
+        "lodash": "^4.17.20",
+        "vue": "^2.6.11"
+    },
+    "dependencies": {
+        "element-ui": "^2.13.2",
+        "node-sass": "^4.14.1",
+        "popper.js": "^1.16.1",
+        "resolve-url-loader": "^3.1.1",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.3",
+        "vue-axios": "^2.1.5",
+        "vue-loader": "^15.9.3",
+        "vue-router": "^3.4.3",
+        "vue-template-compiler": "^2.6.11"
     }
 }
