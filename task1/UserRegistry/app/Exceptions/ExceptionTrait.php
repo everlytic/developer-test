@@ -75,7 +75,7 @@ trait ExceptionTrait
     protected function CustomMethodResponseException($e)
     {
         return response()->json([
-            'errors' => 'The method received in the request-line is known by the origin server but not supported by the target resource. Please check if you have included the target resource in the request-line or you are using the right method.'
+            'errors' => 'The method received in the request-line is known by the origin server but not supported by the target resource. Please check if you have included the target resource in the request-line or you are using the right method for the request.'
         ], Response::HTTP_METHOD_NOT_ALLOWED);
     }
 }
