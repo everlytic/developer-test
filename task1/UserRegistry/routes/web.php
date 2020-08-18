@@ -16,5 +16,5 @@
 // });
 
 Route::get('/{any}', function () {
-//   return view('user');
+  return view('user');
 })->where('any', '.*');
