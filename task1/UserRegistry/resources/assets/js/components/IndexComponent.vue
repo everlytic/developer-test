@@ -73,13 +73,6 @@
                         <td>{{ user.created_at }}</td>
                         <td>{{ user.updated_at }}</td>
                         <td>
-                            <router-link
-                                :to="{ name: 'edit', params: { id: user.id } }"
-                                class="btn btn-primary"
-                                >Edit</router-link
-                            >
-                        </td>
-                        <td>
                             <button
                                 class="btn btn-danger"
                                 @click="
@@ -216,7 +209,7 @@ export default {
             // Delete record
 
             // let url = process.env.VUE_APP_MIX_APP_URL + "/api/users/" + id;
-            let url = "http://everlytic.test/api/users/" + id;
+            let url = "http://localhost/api/users/" + id;
 
             this.axios
                 .delete(url)
@@ -426,7 +419,7 @@ export default {
             //     this.currentSort;
 
             let uri =
-                "http://everlytic.test/api/users?query=" +
+                "http://localhost/api/users?query=" +
                 this.userSearch +
                 "&limit=" +
                 this.limit +
