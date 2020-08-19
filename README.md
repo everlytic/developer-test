@@ -1,3 +1,100 @@
+# Installation
+
+Move into UserRegistry directory and run the  commands below.
+
+```
+npm install
+composer install
+```
+
+# Config
+
+In the .env file that you would have created from .env.example , add the line below to it
+
+```
+VUE_APP_MIX_APP_URL="${APP_URL}"
+```
+
+This line added above is referenced in both IndexComponent.vue and CreateComponent.vue file located at UserRegistry/resources/assets/js/components
+
+# Vue templates updates
+
+Sometimes the defined config VUE_APP_MIX_APP_URL="${APP_URL} found at the .env file does not get pickedup in both IndexComponent.vue and CreateComponent.vue files, if that happens please update urls defines in those two files manually.
+
+- For IndexComponent.vue
+
+```
+
+            // let url = process.env.VUE_APP_MIX_APP_URL + "/api/users/" + id;
+            let url = "http://localhost/api/users/" + id;
+```
+and
+
+```
+            // let uri =
+            //     process.env.VUE_APP_MIX_APP_URL +
+            //     "/api/users?query=" +
+            //     this.userSearch +
+            //     "&limit=" +
+            //     this.limit +
+            //     "&ascending=" +
+            //     order +
+            //     "&page=" +
+            //     this.page +
+            //     "&orderBy=" +
+            //     this.currentSort;
+
+            let uri =
+                "http://localhost/api/users?query=" +
+                this.userSearch +
+                "&limit=" +
+                this.limit +
+                "&ascending=" +
+                order +
+                "&page=" +
+                this.page +
+                "&orderBy=" +
+                this.currentSort;
+```
+
+- For CreateComponent.vue
+
+```
+            // let url = process.env.VUE_APP_MIX_APP_URL + "/api/users";
+            let url = "http://localhost/api/users";
+```
+
+# Migrate and seed database
+
+```
+php artisan migrate
+php artisan db:seed
+```
+
+# Building VueJS Templates
+
+```
+npm run dev
+```
+
+# Rnning unite tests
+
+```
+phpunit
+```
+
+# Accessing the web interface
+
+```
+http://localhost or as an example http://everlytic.test if you have happened to have set your DNS as everlytic.test
+```
+
+# API call URL
+
+```
+http://localhost/api/users or http://everlytic.test/api/users
+```
+
 # Everlytic Developer Test
 ## Overview
 Welcome to the Everlytic developer test. This test contains 2 required tasks. The first task contains the laravel 5.5 framework 
