@@ -187,13 +187,13 @@ export default {
             };
 
             // let url = process.env.VUE_APP_MIX_APP_URL + "/api/users";
-            let url = "http://localhost/api/users";
+            let url = "http://everlytic.test/api/users";
             url = url.replace(/\// + $, "");
 
             this.axios
                 .post(url, payload)
                 .then(response => {
-                    // window.location.replace("http://localhost/users");
+                    // window.location.replace("http://everlytic.test/users");
                     // window.location.replace(process.env.VUE_APP_MIX_APP_URL + "/users");
                     setTimeout(() => {
                         this.$router.push("/users");
@@ -319,7 +319,7 @@ export default {
                     //         "refreshToken"
                     //     );
                     //     return axios
-                    //         .post("http://localhost:8000/auth/refresh", {
+                    //         .post("http://everlytic.test:8000/auth/refresh", {
                     //             refreshToken
                     //         })
                     //         .then(({ data }) => {

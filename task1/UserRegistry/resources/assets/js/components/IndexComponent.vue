@@ -216,7 +216,7 @@ export default {
             // Delete record
 
             // let url = process.env.VUE_APP_MIX_APP_URL + "/api/users/" + id;
-            let url = "http://localhost/api/users/" + id;
+            let url = "http://everlytic.test/api/users/" + id;
 
             this.axios
                 .delete(url)
@@ -426,7 +426,7 @@ export default {
             //     this.currentSort;
 
             let uri =
-                "http://localhost/api/users?query=" +
+                "http://everlytic.test/api/users?query=" +
                 this.userSearch +
                 "&limit=" +
                 this.limit +
