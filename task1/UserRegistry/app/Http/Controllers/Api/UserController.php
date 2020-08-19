@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use DB;
 use App\Http\Requests\UserRequest;
@@ -9,6 +9,7 @@ use App\Http\Resources\UserResource;
 use App\Http\Resources\Users;
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
@@ -128,7 +129,7 @@ class UserController extends Controller
 
         return response([
             'message' => 'updated'
-        ], Response::HTTP_CREATED);
+        ], Response::HTTP_OK);
     }
 
     /**
