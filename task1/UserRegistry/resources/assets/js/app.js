@@ -1,22 +1,51 @@
+const showModal = function(modalid) {
+    let modal = document.getElementById(modalid)
+    modal.style.zIndex = 999;
+    modal.style.opacity = 1;
+    return null;
+}
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+const hideModal = function(modalid) {
+    let modal = document.getElementById(modalid)
+    modal.style.zIndex = -1;
+    modal.style.opacity = 0;
+    return null;
+}
 
-require('./bootstrap');
+window.addEventListener('load', function () {
+    document.getElementById('adduser').addEventListener('click', () => {
+        showModal('newusermodal');
+    }, false);
 
-window.Vue = require('vue');
+    document.getElementById('closeuser').addEventListener('click', (e) => {
+        e.preventDefault();
+        hideModal('newusermodal');
+    }, false);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+    document.getElementById('canceldelete').addEventListener('click', (e) => {
+        e.preventDefault();
+        hideModal('deletemodal');
+    }, false);
 
-const app = new Vue({
-    el: '#app'
+    document.getElementById('confirmdelete').addEventListener('click', (e) => {
+        e.preventDefault();
+        hideModal('deletemodal');
+        let id = e.target.getAttribute('data-id');
+        e.target.setAttribute('data-id', '');
+        if(id) window.location.href = "delete/" + id;
+    }, false);
+
+
+
+    [...document.getElementsByClassName("deletebutton")].forEach(function(element) {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            document.getElementById('confirmdelete').setAttribute('data-id', e.target.getAttribute('data-id'));
+            showModal('deletemodal');
+
+        }, false);
+    });
+
 });

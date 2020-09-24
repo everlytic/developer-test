@@ -15,9 +15,11 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password'); // MKT Not strictly needed for this task but as most user tables have passwords, I left it in for future use
+            $table->string('position'); // MKT added this as it was in the design but missing from this migration
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,0 +1,69 @@
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    transition: all 0.5s;
+    opacity: 0;
+
+    .modalbox {
+        width: 90%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+        z-index: inherit;
+        transition: all 0.5s;
+
+        @media($media-md-up) {
+            width: 75%
+        }
+        @media($media-lg-up) {
+            width: 50%
+        }
+
+        .well {
+            margin: 1rem 1rem 0 1rem;
+        }
+
+        h1 {
+            padding: 0 0 1rem 0;
+            margin: 1rem;
+            border-bottom: solid 1px $colour-bs-light-dark;
+        }
+
+        form {
+            padding: 1rem;
+
+            .inputwrapper {
+                margin-bottom: 0.5rem;
+            }
+
+            input[type=text],
+            input[type=email] {
+                border: solid 1px $colour-bs-light-dark;
+                border-radius: 0.25rem;
+                padding: 0.5rem 0.5rem;
+                display: block;
+                font-size: 1.2rem;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            label {
+                display: block;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+}

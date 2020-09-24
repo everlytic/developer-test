@@ -11,6 +11,12 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+Route::get('/', 'UserListing@index');
+Route::get('/delete/{id}', 'UserListing@delete');
+
+Route::post('/create', 'UserListing@create');
