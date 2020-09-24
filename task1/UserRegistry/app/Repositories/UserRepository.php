@@ -6,7 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class UserRepository
+class UserRepository implements UserRepositoryInterface
 {
     /**
      * Get all users.
@@ -15,18 +15,9 @@ class UserRepository
      */
     public function all()
     {
-        return User::select(
-            'id',
-            'firstname',
-            'lastname',
-            'email',
-            'position',
-            'created_at',
-            'updated_at'
-        )
-        ->orderBy('firstname')
-        ->get()
-        ->toArray();
+        return User::orderBy('firstname')
+            ->get()
+            ->toArray();
     }
 
     /**
@@ -41,18 +32,9 @@ class UserRepository
             return false;
         }
 
-        return User::select(
-            'id',
-            'firstname',
-            'lastname',
-            'email',
-            'position',
-            'created_at',
-            'updated_at'
-        )
-        ->where('id', $id)
-        ->first()
-        ->toArray();
+        return User::where('id', $id)
+            ->first()
+            ->toArray();
     }
 
     /**
