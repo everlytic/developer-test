@@ -1,38 +1,94 @@
+$colour-primary:			rgb(0,0,0);
 
-// Body
-$body-bg: #f5f8fa;
 
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
+/* Bootstrap colours */
+$colour-bs-primary:				#007bff;
+$colour-bs-primary-darkest: 	mix(#000, $colour-bs-primary, 70%);
+$colour-bs-primary-darker: 		mix(#000, $colour-bs-primary, 40%);
+$colour-bs-primary-dark: 		mix(#000, $colour-bs-primary, 20%);
+$colour-bs-primary-light: 		mix(#fff, $colour-bs-primary, 20%);
+$colour-bs-primary-lighter: 	mix(#fff, $colour-bs-primary, 40%);
+$colour-bs-primary-lightest: 	mix(#fff, $colour-bs-primary, 70%);
 
-// Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
+$colour-bs-secondary:			#6c757d;
+$colour-bs-secondary-darkest: 	mix(#000, $colour-bs-secondary, 70%);
+$colour-bs-secondary-darker: 	mix(#000, $colour-bs-secondary, 40%);
+$colour-bs-secondary-dark: 		mix(#000, $colour-bs-secondary, 20%);
+$colour-bs-secondary-light: 	mix(#fff, $colour-bs-secondary, 20%);
+$colour-bs-secondary-lighter: 	mix(#fff, $colour-bs-secondary, 40%);
+$colour-bs-secondary-lightest: 	mix(#fff, $colour-bs-secondary, 70%);
 
-// Typography
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
+$colour-bs-success:				#28a745;
+$colour-bs-success-darkest: 	mix(#000, $colour-bs-success, 70%);
+$colour-bs-success-darker: 		mix(#000, $colour-bs-success, 40%);
+$colour-bs-success-dark: 		mix(#000, $colour-bs-success, 20%);
+$colour-bs-success-light: 		mix(#fff, $colour-bs-success, 20%);
+$colour-bs-success-lighter: 	mix(#fff, $colour-bs-success, 40%);
+$colour-bs-success-lightest: 	mix(#fff, $colour-bs-success, 70%);
 
-// Navbar
-$navbar-default-bg: #fff;
+$colour-bs-info:				#17a2b8;
+$colour-bs-info-darkest: 		mix(#000, $colour-bs-info, 70%);
+$colour-bs-info-darker: 		mix(#000, $colour-bs-info, 40%);
+$colour-bs-info-dark: 			mix(#000, $colour-bs-info, 20%);
+$colour-bs-info-light: 			mix(#fff, $colour-bs-info, 20%);
+$colour-bs-info-lighter: 		mix(#fff, $colour-bs-info, 40%);
+$colour-bs-info-lightest: 		mix(#fff, $colour-bs-info, 70%);
 
-// Buttons
-$btn-default-color: $text-color;
+$colour-bs-warning:				#ffc107;
+$colour-bs-warning-darkest: 	mix(#000, $colour-bs-warning, 70%);
+$colour-bs-warning-darker: 		mix(#000, $colour-bs-warning, 40%);
+$colour-bs-warning-dark: 		mix(#000, $colour-bs-warning, 20%);
+$colour-bs-warning-light: 		mix(#fff, $colour-bs-warning, 20%);
+$colour-bs-warning-lighter: 	mix(#fff, $colour-bs-warning, 40%);
+$colour-bs-warning-lightest: 	mix(#fff, $colour-bs-warning, 70%);
 
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
+$colour-bs-danger:				#dc3545;
+$colour-bs-danger-darkest: 		mix(#000, $colour-bs-danger, 70%);
+$colour-bs-danger-darker: 		mix(#000, $colour-bs-danger, 40%);
+$colour-bs-danger-dark: 		mix(#000, $colour-bs-danger, 20%);
+$colour-bs-danger-light: 		mix(#fff, $colour-bs-danger, 20%);
+$colour-bs-danger-lighter: 		mix(#fff, $colour-bs-danger, 40%);
+$colour-bs-danger-lightest: 	mix(#fff, $colour-bs-danger, 70%);
 
-// Panels
-$panel-default-heading-bg: #fff;
+$colour-bs-light:				#f8f9fa;
+$colour-bs-light-darkest: 		mix(#000, $colour-bs-light, 70%);
+$colour-bs-light-darker: 		mix(#000, $colour-bs-light, 40%);
+$colour-bs-light-dark: 			mix(#000, $colour-bs-light, 20%);
+$colour-bs-light-light: 		mix(#fff, $colour-bs-light, 20%);
+$colour-bs-light-lighter: 		mix(#fff, $colour-bs-light, 40%);
+$colour-bs-light-lightest: 		mix(#fff, $colour-bs-light, 70%);
+
+$colour-bs-dark:				#343a40;
+$colour-bs-dark-darkest: 		mix(#000, $colour-bs-dark, 70%);
+$colour-bs-dark-darker: 		mix(#000, $colour-bs-dark, 40%);
+$colour-bs-dark-dark: 			mix(#000, $colour-bs-dark, 20%);
+$colour-bs-dark-light: 			mix(#fff, $colour-bs-dark, 20%);
+$colour-bs-dark-lighter: 		mix(#fff, $colour-bs-dark, 40%);
+$colour-bs-dark-lightest: 		mix(#fff, $colour-bs-dark, 70%);
+
+
+
+
+
+/**
+	FONTS
+**/
+$font-size:					16px;
+
+$font-body:					'Titillium Web',Helvetica,Arial,sans-serif;
+$font-head: 				'Titillium Web',Helvetica,Arial,sans-serif;
+$font-mono:					Monaco,Consolas,"Courier New",monospaced;
+
+
+/**
+	MEDIA BREAKPOINTS
+**/
+$media-sm-up: 				'min-width: 576px';
+$media-md-up: 				'min-width: 768px';
+$media-lg-up: 				'min-width: 992px';
+$media-xl-up: 				'min-width: 1200px';
+
+$media-xs-down: 			'max-width: 575.98px';
+$media-sm-down: 			'max-width: 767.98px';
+$media-md-down: 			'max-width: 991.98px';
+$media-lg-down: 			'max-width: 1199.98px';

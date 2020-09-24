@@ -1,9 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import '_variables';
 
-// Variables
-@import "variables";
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+	padding-top: 40px;
+	font-family: $font-body;
+    font-weight: 400;
+    font-size: $font-size;
+    color: #000;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+	letter-spacing: 0.025rem;
+}
+
+.container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: #fff;
+
+    @media($media-md-up) {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    @media($media-lg-up) {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.well {
+    display: block;
+    margin: 1rem 0;
+    background-color: $colour-bs-secondary-lightest;
+    border: solid 1px $colour-bs-secondary-light;
+    color: $colour-bs-secondary;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+
+    &.danger {
+        background-color: $colour-bs-danger-lightest;
+        border: solid 1px $colour-bs-danger-light;
+        color: $colour-bs-danger;
+
+    }
+
+    &.success {
+        background-color: $colour-bs-success-lightest;
+        border: solid 1px $colour-bs-success-light;
+        color: $colour-bs-success;
+
+    }
+
+}
+
+.button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    display: inline-block;
+    color: #fff;
+    background-color: $colour-primary;
+    border-radius: 0.15rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: mix(#fff, $colour-primary, 15%);
+    }
+    &.secondary {
+        background-color: $colour-bs-secondary-lightest;
+        color: $colour-bs-secondary-darker;
+
+        &:hover {
+            background-color: $colour-bs-secondary-lighter;
+        }
+    }
+
+}
+
+#adminwell {
+    text-align: right;
+    margin: 1rem 0;
+}
+
+table#userstable {
+    border: none;
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    tr {
+        &:nth-child(odd) {
+            background-color: #ebebeb;
+        }
+
+        &:nth-child(odd):hover {
+            background-color: #e3e3e3;
+        }
+        &:nth-child(even):hover {
+            background-color: #f6f6f6;
+        }
+
+
+    }
+    td {
+        border: none;
+        border-spacing: 0;
+        padding: 1rem;
+
+        &:last-child{
+            width:1%;
+            white-space:nowrap;
+        }
+    }
+}
+.deletebutton {
+    color: $colour-bs-danger;
+    padding: 0.25rem;
+	cursor: pointer;
+
+    &:hover {
+        color: $colour-bs-danger-darker;
+        text-decoration: none;
+    }
+}
+
+
+@import '_header';
+@import '_footer';
+@import '_modal';
