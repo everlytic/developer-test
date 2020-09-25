@@ -1,0 +1,29 @@
+1. I have left the controller name as UserListing, although it doesn't follow convention and could lead to confusion. I've left it as it is on the assumption that this is part of a bigger project and changing class names could have implications downstream. However, I would change it to UsersController if there was no effect.
+
+2. I've not included any authentication in the project as it was not part of the task but given that it can read from and write to the database this should be implemented. Given enough time I'd have done this as a matter of course.
+
+3. I've chosen to display users by passing their ID in the URL. However, for SEO purposes we might want to consider passing their names along with the ID as well. We mustn't use their names only as names are not necessarily unique.
+
+4. I had a lot of trouble with Webpack. I'm using a Mac running Catalina and it seems that chockidar is not supported : `npm WARN notsup Unsupported engine for watchpack-chokidar2@2.0.0: wanted: {"node":"<8.10.0"} (current: {"node":"12.18.3","npm":"6.14.6"})`. So, Iused my usual compiler - CodeKit - to handle the compiling of SASS and JS files. If this was part of a normal workflow and not a test, I'd spend more time finding a long-term, team supported, solution.
+
+5. Given there is no information about the root route and we are only interested in USerListings at the moment, I've routed UserListings to the root of the routes. If/when there was/is a homepage, I'd update the route - the home route is currently just commented out for this eventuality.
+
+6. I didn't have access to the image used in the header so have put a temporary, similar one in its place. This is easily updated.
+
+7. This particular interface is ideal for building in Angular or another stateful engine. But, as the repo wasn't set up to use Angular I felt it beyond the scope to add it. However, I'd have recommended it for a live project.
+
+8. I created the modal box by listening for an event and then running a function. For a proper project I'd build a class to handle this properly and ensure modals are reusable and can take content from an AJAX callback.
+
+9. The design of the modal calls for a single cancel button but this might be off screen on some devices so I'd recommend both adding an (x) to the top right of the modal and also perhaps triggering a close on pressing ESC.
+
+10. With more time I'd tidy up the redirects. The code isn't as DRY as it should be with a single method sometimes redirecting to the same page in multiple cases. I'd set a state and do a single redirect at the end depending on the state.
+
+11. I'd improve the form validation both to ensure we only receive input we actually want, not just sanitized, but also to return more helpful errors. So, for example if an email address already exists it should return an error saying so, not a generic error.
+
+12. There are undoubtedly better ways of doing what I've done, but it's been a little while since I used Laravel. It's very similar to CakePHP so it is more some minor differencens and semantics than understanding what I need to achieve. I hope in three month's time, if I work on Laravel regularly, that I'm embarrassed by my code and want to do it all again. But, given the task, the issues I had with dependencies on MacOS Catalina (it seems to have broken everything) and the timeframe available, I have produced a working example! However, it is very far from what I'd call acceptable. There is a lot more I'd do to check and validate input, and also error handling. I am a firm believer that users shouldn't see coding errors. They should only see nice pages that tell them what they can do to achieve their goal. There isn't time to factor that in to a test like this. 
+
+
+
+
+
+
