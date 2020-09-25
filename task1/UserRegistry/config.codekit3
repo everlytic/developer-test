@@ -185,12 +185,28 @@
 		"oAP": "/app/Providers/EventServiceProvider.php",
 		"oF": 0
 		},
+	"/app/Providers/RepositoryServiceProvider.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/app/Providers/RepositoryServiceProvider.php",
+		"oF": 0
+		},
 	"/app/Providers/RouteServiceProvider.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/app/Providers/RouteServiceProvider.php",
+		"oF": 0
+		},
+	"/app/Repositories/Interfaces/UserRepositoryInterface.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/app/Repositories/Interfaces/UserRepositoryInterface.php",
 		"oF": 0
 		},
 	"/app/Repositories/UserRepository.php": {
@@ -886,6 +902,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/tests/Feature/ExampleTest.php",
+		"oF": 0
+		},
+	"/tests/Feature/UserListingTest.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tests/Feature/UserListingTest.php",
 		"oF": 0
 		},
 	"/tests/TestCase.php": {

@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 
-use App\Models\User;
-use App\Repositories\UserRepository;
+//use App\Models\User;
+//use App\Repositories\UserRepository;
+use App\Repositories\UserRepositoryInterface;
 
 class UserListing extends Controller
 {
@@ -17,7 +18,7 @@ class UserListing extends Controller
      *
      * @return App\Repositories\UserRepository
      */
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
     }
@@ -38,6 +39,7 @@ class UserListing extends Controller
             $error = $e->getMessage();
             //Route to error page
         }
+
         return view('user.index')
         ->with('users', $users);
 
