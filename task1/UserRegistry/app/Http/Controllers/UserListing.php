@@ -37,11 +37,9 @@ class UserListing extends Controller
         catch(\Exception $e){
             $users = [];
             $error = $e->getMessage();
-
-print_r($error);
-
             //Route to error page
         }
+
         return view('user.index')
         ->with('users', $users);
 
