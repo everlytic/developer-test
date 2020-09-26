@@ -25,6 +25,14 @@
 		"oAP": "/.env.example",
 		"oF": 0
 		},
+	"/.env.testing": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.env.testing",
+		"oF": 0
+		},
 	"/.gitattributes": {
 		"cB": 0,
 		"ft": 8192,
