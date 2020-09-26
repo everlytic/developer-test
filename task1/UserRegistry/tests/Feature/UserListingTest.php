@@ -11,6 +11,7 @@ use App\User;
 class UserTest extends TestCase
 {
     use WithoutMiddleware;
+    use RefreshDatabase;
 
     public function setUp()
     {
@@ -19,99 +20,85 @@ class UserTest extends TestCase
     }
 
 
-    public function testCreateUser()
+    public function test_index_lists_users()
     {
-        $oldusers = User::all();
-        $old_users_count = count($oldusers);
-
-        $response = $this->followingRedirects()->post('/create', $this->data());
-
-        $newusers = User::all();
-        $new_users_count = count($newusers);
-
-        $this->assertEquals($old_users_count + 1, $new_users_count);
+        $data = factory(User::class, 10)->create();
+        $users = $data->toArray();
+        //$this->assertDatabaseCount('users', 10); //not available in this version of Laravel?
+        $response = $this->followingRedirects()->get('/');
+        $response->assertSee('#userstable', $users[0]['firstname'] . " FLOOF " . $users[0]['lastname']);
         $response->assertStatus(200);
     }
 
-    public function testValidationFirstname()
+
+    public function test_a_user_is_created()
     {
+        $data = $this->data();
+        $response = $this->followingRedirects()->post('/create', $data);
+        $this->assertDatabaseHas('users', $data);
+        $response->assertStatus(200);
+    }
 
-        $oldusers = User::all();
-        $old_users_count = count($oldusers);
-
-
-        $response = $this->followingRedirects()->post('/create', array_merge($this->data(), [
+    public function test_validation_firstname_supplied()
+    {
+        $data = array_merge($this->data, [
             'firstname' => ''
-        ]));
-
-        $newusers = User::all();
-        $new_users_count = count($newusers);
-
-        $this->assertEquals($old_users_count, $new_users_count);
+        ]);
+        $response = $this->followingRedirects()->post('/create', $data);
+        $this->assertDatabaseMissing('users', $data);
+        $response->assertStatus(200);
     }
 
-    public function testValidationLastname()
+    public function test_validation_lastname_supplied()
     {
-
-        $oldusers = User::all();
-        $old_users_count = count($oldusers);
-
-
-        $response = $this->followingRedirects()->post('/create', array_merge($this->data(), [
+        $data = array_merge($this->data, [
             'lastname' => ''
-        ]));
-
-        $newusers = User::all();
-        $new_users_count = count($newusers);
-
-        $this->assertEquals($old_users_count, $new_users_count);
+        ]);
+        $response = $this->followingRedirects()->post('/create', $data);
+        $this->assertDatabaseMissing('users', $data);
+        $response->assertStatus(200);
     }
 
-    public function testValidationEmail()
+    public function test_validation_email_supplied()
     {
-
-        $oldusers = User::all();
-        $old_users_count = count($oldusers);
-
-
-        $response = $this->followingRedirects()->post('/create', array_merge($this->data(), [
-            'email' => 'notanemail'
-        ]));
-
-        $newusers = User::all();
-        $new_users_count = count($newusers);
-
-        $this->assertEquals($old_users_count, $new_users_count);
+        $data = array_merge($this->data, [
+            'email' => ''
+        ]);
+        $response = $this->followingRedirects()->post('/create', $data);
+        $this->assertDatabaseMissing('users', $data);
+        $response->assertStatus(200);
     }
 
-    public function testValidationPosition()
+    public function test_validation_email_valid()
     {
-        $oldusers = User::all();
-        $old_users_count = count($oldusers);
+        $data = array_merge($this->data, [
+            'email' => 'thisisnotanemail'
+        ]);
+        $response = $this->followingRedirects()->post('/create', $data);
+        $this->assertDatabaseMissing('users', $data);
+        $response->assertStatus(200);
+    }
 
-        $response = $this->followingRedirects()->post('/create', array_merge($this->data(), [
+    public function test_validation_position_supplied()
+    {
+        $data = array_merge($this->data, [
             'position' => ''
-        ]));
-
-        $newusers = User::all();
-        $new_users_count = count($newusers);
-
-        $this->assertEquals($old_users_count, $new_users_count);
+        ]);
+        $response = $this->followingRedirects()->post('/create', $data);
+        $this->assertDatabaseMissing('users', $data);
+        $response->assertStatus(200);
     }
 
-    public function testDeleteUser()
+    public function test_created_user_is_deleted()
     {
-        $user = User::first();
-        $response = $this->get('/delete/' . $user->id);
-        $this->assertDatabaseMissing('users', ['id' => $user->id]);
-        $response->assertStatus(302);
+
+        $data = factory(User::class)->create()->toArray();
+        $this->assertDatabaseHas('users', $data);
+
+        $response = $this->followingRedirects()->get('/delete/' . $data['id']);
+        $this->assertDatabaseMissing('users', ['id' => $data['id']]);
+        $response->assertStatus(200);
     }
-
-
-
-
-
-
 
 
     private function data()
