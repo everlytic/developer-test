@@ -26,7 +26,7 @@ class UserTest extends TestCase
         $users = $data->toArray();
         //$this->assertDatabaseCount('users', 10); //not available in this version of Laravel?
         $response = $this->followingRedirects()->get('/');
-        $response->assertSee('#userstable', $users[0]['firstname'] . " FLOOF " . $users[0]['lastname']);
+        $response->assertSee('#userstable', $users[0]['firstname'] . " " . $users[0]['lastname']);
         $response->assertStatus(200);
     }
 
