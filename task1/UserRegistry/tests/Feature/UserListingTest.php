@@ -26,7 +26,7 @@ class UserTest extends TestCase
         $users = $data->toArray();
         //$this->assertDatabaseCount('users', 10); //not available in this version of Laravel?
         $response = $this->followingRedirects()->get('/');
-        $response->assertSee('#userstable', $users[0]['firstname'] . " " . $users[0]['lastname']);
+        $response->assertSee($users[0]['firstname'] . " " . $users[0]['lastname']);
         $response->assertStatus(200);
     }
 
@@ -41,7 +41,7 @@ class UserTest extends TestCase
 
     public function test_validation_firstname_supplied()
     {
-        $data = array_merge($this->data, [
+        $data = array_merge($this->data(), [
             'firstname' => ''
         ]);
         $response = $this->followingRedirects()->post('/create', $data);
@@ -51,7 +51,7 @@ class UserTest extends TestCase
 
     public function test_validation_lastname_supplied()
     {
-        $data = array_merge($this->data, [
+        $data = array_merge($this->data(), [
             'lastname' => ''
         ]);
         $response = $this->followingRedirects()->post('/create', $data);
@@ -61,7 +61,7 @@ class UserTest extends TestCase
 
     public function test_validation_email_supplied()
     {
-        $data = array_merge($this->data, [
+        $data = array_merge($this->data(), [
             'email' => ''
         ]);
         $response = $this->followingRedirects()->post('/create', $data);
@@ -71,7 +71,7 @@ class UserTest extends TestCase
 
     public function test_validation_email_valid()
     {
-        $data = array_merge($this->data, [
+        $data = array_merge($this->data(), [
             'email' => 'thisisnotanemail'
         ]);
         $response = $this->followingRedirects()->post('/create', $data);
@@ -81,7 +81,7 @@ class UserTest extends TestCase
 
     public function test_validation_position_supplied()
     {
-        $data = array_merge($this->data, [
+        $data = array_merge($this->data(), [
             'position' => ''
         ]);
         $response = $this->followingRedirects()->post('/create', $data);
