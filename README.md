@@ -19,8 +19,7 @@ Composer
 Note: The laravel documentation for this setup can be found here: https://laravel.com/docs/5.5/configuration
 
 ### Brief
-Complete the user listing interface as per the design without using a responsive framework like bootstrap. 
-For example, the modal can just be implemented using a absolute positioned container. The design files is inside the task1/UserRegistryDesign folder
+Complete the user listing interface as per the design. The design files is inside the task1/UserRegistryDesign folder
 
 1. The following features must be completed:
   
